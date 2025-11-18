@@ -1,16 +1,19 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_isdigit.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: akhalidi <akhalidi@student.s19.be>         +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/11/18 16:58:35 by akhalidi          #+#    #+#             */
+/*   Updated: 2025/11/18 16:58:47 by akhalidi         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 int	ft_isdigit(int nb)
 {
 	if ( nb >= 48 && nb <= 57)
 		return (1);
 	else
 		return (0);
-}
-#include <stdio.h>
-#include <ctype.h>
-int	main()
-{
-	printf("%d\n", ft_isdigit('2'));
-	printf("%d\n", isdigit('2'));
-	printf("%d\n", ft_isdigit('f'));
-	printf("%d", isdigit('f'));
 }
