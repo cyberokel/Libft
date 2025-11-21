@@ -17,15 +17,16 @@ int	ft_len(char const *a, char const *b)
 
 	i = 0;
 	j = 0;
-	while (a[i])
+	while (b[i])
 	{
 		j = 0;
-		while (b[j])
+		if (b[i] == a[0])
 		{
-			if (a[i] == b[j])
+			while (b[i] == a[j] && a[j])
+			{
 				len++;
-			j++;
-		}
+				j++;
+			}
 		i++;
 	}
 	return (len);
