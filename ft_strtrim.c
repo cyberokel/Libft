@@ -1,64 +1,47 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strjoin.c                                       :+:      :+:    :+:   */
+/*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: akhalidi <akhalidi@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/18 17:23:02 by akhalidi          #+#    #+#             */
-/*   Updated: 2025/11/18 17:56:37 by akhalidi         ###   ########.fr       */
+/*   Updated: 2025/11/22 20:26:15 by akhalidi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include "libft.h"
 
-int	ft_len(char const *a, char const *b)
+int	is_char_in_str(char const *s, char c)
 {
-	int	i;
-	int	j;
+	size_t	i;
 
 	i = 0;
-	j = 0;
-	while (b[i])
+	while (s[i])
 	{
-		j = 0;
-		if (b[i] == a[0])
-		{
-			while (b[i] == a[j] && a[j])
-			{
-				len++;
-				j++;
-			}
+		if (s[i] == c)
+			return (1);
 		i++;
 	}
-	return (len);
+	return (0);
 }
 
 char	*ft_strtrim(char const *s1, char const *set)
 {
-	char	*str;
-	int	len;
-	int	i;
-	int	j;
-	int	k;
-	
-	i = 0;
-	j = 0;
-	len = ft_strlen(s1) - ft_len(s1, set) + 1;
-	str = malloc(sizeof(char) * len);
-	if (!str)
+	size_t	start;
+	size_t	end;
+	char	*trimmed;
+
+	if (!s1 || !set)
 		return (NULL);
-	while (s1[i])
-	{
-		j = 0;
-		while (set[j])
-		{
-			if (s1[i] == set[j])
-				i++;
-			j++;
-		}
-		str[k] = s1[i];
-		i++;
-		k++;
-	}
-	str[k] = '\0';
-	return (str);
+	start = 0;
+	end = ft_strlen(s1);
+	while (s1[start] && is_char_in_str(set, s1[start]))
+		start++;
+	while (end > start && is_char_in_str(set, s1[end - 1]))
+		end--;
+	trimmed = (char *)malloc(end - start + 1);
+	if (!trimmed)
+		return (NULL);
+	ft_strlcpy(trimmed, s1 + start, end - start + 1);
+	return (trimmed);
 }
