@@ -6,7 +6,7 @@
 /*   By: akhalidi <akhalidi@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/18 17:00:48 by akhalidi          #+#    #+#             */
-/*   Updated: 2025/11/22 22:14:05 by akhalidi         ###   ########.fr       */
+/*   Updated: 2025/11/22 22:20:18 by akhalidi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,16 +17,16 @@ int	ft_count(char const *s, char c)
 
 	i = 0;
 	count = 0;
+	if (s[0] != c)
+		count++; 
 	while(s[i])
 	{
-		if (s[i] == c)
+		if (s[i] != c && s[i - 1] == c)
 			count++;
 		i++;
 	}
 	return (count);
 }
-
-int	ft_strlen(
 
 char	**ft_split(char const *s, char c)
 {
@@ -39,4 +39,4 @@ char	**ft_split(char const *s, char c)
 	table = malloc(sizeof(char*)* words + 1);
 	if (!table)
 		return (NULL);
-
+	*table = (sizeof(char) * 
