@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_count(char const *s, char c)
+int	ft_count_words(char const *s, char c)
 {
 	size_t	i;
 	size_t	count;
@@ -28,15 +28,52 @@ int	ft_count(char const *s, char c)
 	return (count);
 }
 
+int	ft_count_len(char const *s, char c)
+{
+	int	i;
+	while (s[i])
+	{
+		if (s[i] == c)
+			i++;
+		count++;
+		i++;
+	}
+	return (count);
+}
+
+/*int	ft_check(char const *s, char c)
+{
+	int	i;
+
+	i = 0;
+	while (s[i] && */
 char	**ft_split(char const *s, char c)
 {
 	char	**table;
 	size_t	i;
+	size_t	words;
 	size_t	len;
 
 	i = 0;
-	words = ft_count(s, c);
+	words = ft_count_words(s, c);
+	len = ft_count_len(s, c);
 	table = malloc(sizeof(char*)* words + 1);
 	if (!table)
 		return (NULL);
-	*table = (sizeof(char) * 
+	*table = (sizeof(char) * len + 1);
+	if (!*table)
+		return (NULL);
+	while (table[i][j])
+	{
+		j = 0;
+		while (table[i][j] && s[k] != c)
+		{
+			table[i][j] = s[k];
+			j++;
+			k++;
+		}
+		table[i][j] = '\0';
+		i++
+	}
+	return (table);
+}
