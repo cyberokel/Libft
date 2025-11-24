@@ -10,26 +10,26 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-int     ft_len(int c, long *nbr)
+int     ft_len(long nbr)
 {
-        int     len;
+	int	count;
 
-        len = 0;
-        if (c < 0)
-        {
-                *nbr = *nbr * -1;
-                c = c * -1;
-                len++;
-        }
-        while (c >= 10)
-        {
-                c = c / 10;
-                len++;
-        }
-        if (c < 10)
-                len++;
-        return (len);
+	count = 0;
+	if (nbr < 0)
+	{
+		nbr *= -1;
+		count++;
+	}
+	while (nbr >= 10)
+	{
+		nbr = nbr / 10;
+		count++;
+	}
+	if (nbr < 10)
+		count++;
+	return (count);
 }
+
 char    *ft_itoa(int n)
 {
         char    *str;
@@ -37,18 +37,21 @@ char    *ft_itoa(int n)
         int     len;
 
         nbr = n;
-        len = ft_len(nbr, &nbr) + 1;
+        len = ft_len(nbr) + 1;
         str = malloc(sizeof(char) * len);
         if (!str)
                 return (NULL);
-        str[len - 1] = '\0';
+        str[len] = '\0';
         len--;
-        if (n < 0)
-                str[0] = '-';
-        while (len-- > 0 && nbr < 10)
+        if (nbr < 0)
+                nbr *= -1;
+        while (len >= 0)
         {
                 str[len] =  (nbr % 10) + '0';
                 nbr = nbr / 10;
+		len--;
         }
+	if (n < 0)
+		str[0] = '-';
         return (str);
 }
