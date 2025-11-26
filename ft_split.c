@@ -10,14 +10,16 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_count_words(char const *s, char c)
+#include <stdlib.h>
+
+static int	count_words(const char *s, char c)
 {
 	int	i;
 	int	count;
 
 	i = 0;
 	count = 0;
-	while(s[i])
+	while (s[i])
 	{
 		if (s[i] != c && (i == 0 || s[i - 1] == c))
 			count++;
@@ -26,7 +28,7 @@ int	ft_count_words(char const *s, char c)
 	return (count);
 }
 
-int	ft_len(char const *s, char c)
+static int	word_len(const char *s, char c)
 {
 	int	i;
 
@@ -36,37 +38,55 @@ int	ft_len(char const *s, char c)
 	return (i);
 }
 
-char	**ft_split(char const *s, char c)
+static void	free_all(char **tab, int i)
 {
-	char	**table;
+	while (i >= 0)
+	{
+		free(tab[i]);
+		i--;
+	}
+	free(tab);
+}
+
+static char	**fill_tab(char **tab, const char *s, char c)
+{
 	int	i;
 	int	j;
 	int	k;
-	int	words;
+	int	len;
 
 	i = 0;
-	j = 0;
 	k = 0;
-	words = ft_count_words(s, c) + 1;
-	table = malloc(sizeof(char*)* words);
-	if (!table)
-		return (NULL);
 	while (s[k])
 	{
 		while (s[k] == c)
 			k++;
-		table[i] = malloc(sizeof(char)  * (ft_len(&s[k], c) + 1));
-		if (!table[i])
-			return (NULL);
+		if (!s[k])
+			break ;
+		len = word_len(&s[k], c);
+		tab[i] = malloc(len + 1);
+		if (!tab[i])
+			return (free_all(tab, i - 1), NULL);
 		j = 0;
-		while(s[k] != c)
-		{
-			table[i][j] = s[k];
-			j++;
-			k++;
-		}
-		table[i][j] = '\0';
-		i++;
+		while (j < len)
+			tab[i][j++] = s[k++];
+		tab[i++][j] = '\0';
 	}
-	return (table);
+	tab[i] = NULL;
+	return (tab);
 }
+
+char	**ft_split(const char *s, char c)
+{
+	char	**tab;
+	int		words;
+
+	if (!s)
+		return (NULL);
+	words = count_words(s, c);
+	tab = malloc(sizeof(char *) * (words + 1));
+	if (!tab)
+		return (NULL);
+	return (fill_tab(tab, s, c));
+}
+
