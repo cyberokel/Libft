@@ -6,13 +6,13 @@
 /*   By: akhalidi <akhalidi@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/18 16:58:17 by akhalidi          #+#    #+#             */
-/*   Updated: 2025/11/18 16:58:21 by akhalidi         ###   ########.fr       */
+/*   Updated: 2025/11/29 19:04:34 by akhalidi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_isascii(int c)
 {
-	if ( c >= 0 && c <= 127)
+	if (c >= 0 && c <= 127)
 		return (1);
 	else
 		return (0);

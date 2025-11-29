@@ -6,17 +6,16 @@
 /*   By: akhalidi <akhalidi@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/18 17:00:48 by akhalidi          #+#    #+#             */
-/*   Updated: 2025/11/22 22:20:18 by akhalidi         ###   ########.fr       */
+/*   Updated: 2025/11/29 19:01:44 by akhalidi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
 #include "libft.h"
 
 static int	count_words(const char *s, char c)
 {
 	size_t	i;
-	int	count;
+	int		count;
 
 	i = 0;
 	count = 0;

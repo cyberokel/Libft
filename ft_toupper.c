@@ -6,13 +6,13 @@
 /*   By: akhalidi <akhalidi@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/18 17:03:03 by akhalidi          #+#    #+#             */
-/*   Updated: 2025/11/18 17:03:05 by akhalidi         ###   ########.fr       */
+/*   Updated: 2025/11/29 18:53:20 by akhalidi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_toupper(int c)
 {
-	if ( c >= 'a' && c <= 'z')
+	if (c >= 'a' && c <= 'z')
 		c -= 32;
 	return (c);
 }

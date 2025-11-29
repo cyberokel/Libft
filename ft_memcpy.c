@@ -6,7 +6,7 @@
 /*   By: akhalidi <akhalidi@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/18 17:00:15 by akhalidi          #+#    #+#             */
-/*   Updated: 2025/11/18 17:00:16 by akhalidi         ###   ########.fr       */
+/*   Updated: 2025/11/29 18:47:28 by akhalidi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,8 @@
 void	*ft_memcpy(void *dst, const void *src, size_t n)
 {
 	unsigned char	*a;
-	const char	*b;
-	size_t	i;
+	const char		*b;
+	size_t			i;
 
 	i = 0;
 	if (!dst && !src)
@@ -29,4 +29,4 @@ void	*ft_memcpy(void *dst, const void *src, size_t n)
 		i++;
 	}
 	return (dst);
-}			
+}

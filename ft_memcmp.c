@@ -6,7 +6,7 @@
 /*   By: akhalidi <akhalidi@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/18 16:59:57 by akhalidi          #+#    #+#             */
-/*   Updated: 2025/11/18 16:59:58 by akhalidi         ###   ########.fr       */
+/*   Updated: 2025/11/29 19:05:32 by akhalidi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
 	unsigned const char	*str1;
 	unsigned const char	*str2;
-	size_t	i;
+	size_t				i;
 
 	str1 = s1;
 	str2 = s2;

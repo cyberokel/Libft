@@ -6,7 +6,7 @@
 /*   By: akhalidi <akhalidi@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/18 16:56:36 by akhalidi          #+#    #+#             */
-/*   Updated: 2025/11/18 16:56:50 by akhalidi         ###   ########.fr       */
+/*   Updated: 2025/11/29 18:52:35 by akhalidi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ int	ft_atoi(const char *str)
 	}
 	while (str[i] >= '0' && str[i] <= '9')
 	{
-		result =  result * 10 + (str[i] - '0');
+		result = result * 10 + (str[i] - '0');
 		i++;
 	}
 	return (result * sign);

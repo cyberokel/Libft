@@ -6,13 +6,13 @@
 /*   By: akhalidi <akhalidi@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/18 16:58:56 by akhalidi          #+#    #+#             */
-/*   Updated: 2025/11/18 16:58:58 by akhalidi         ###   ########.fr       */
+/*   Updated: 2025/11/29 19:05:00 by akhalidi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_isprint(int c)
 {
-	if ( c >= 32 && c <= 126) 
+	if (c >= 32 && c <= 126)
 		return (1);
 	else
 		return (0);
