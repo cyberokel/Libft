@@ -6,9 +6,11 @@
 /*   By: akhalidi <akhalidi@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/18 16:59:12 by akhalidi          #+#    #+#             */
-/*   Updated: 2025/11/29 18:51:56 by akhalidi         ###   ########.fr       */
+/*   Updated: 2025/11/29 19:42:03 by akhalidi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+# include "libft.h"
 
 int	ft_len(long nbr)
 {

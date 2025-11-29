@@ -6,7 +6,7 @@
 /*   By: akhalidi <akhalidi@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/18 17:00:38 by akhalidi          #+#    #+#             */
-/*   Updated: 2025/11/29 18:45:48 by akhalidi         ###   ########.fr       */
+/*   Updated: 2025/11/29 19:23:59 by akhalidi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void	*ft_memset(void *b, int c, size_t len)
 {
 	unsigned char	*ptr;
-	int				j;
+	size_t				j;
 
 	ptr = b;
 	j = 0;
