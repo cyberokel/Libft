@@ -10,50 +10,52 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "libft.h"
+#include "libft.h"
+#include <stdio.h>
 
-int	ft_len(long nbr)
+static int	nb_digits(long n)
 {
-	int	count;
+	int	nbr;
 
-	count = 0;
-	if (nbr < 0)
+	nbr = 0;
+	if (n == 0)
+		return (1);
+	if (n < 0)
 	{
-		nbr *= -1;
-		count++;
+		nbr++;
+		n = -n;
 	}
-	while (nbr >= 10)
+	while (n > 0)
 	{
-		nbr = nbr / 10;
-		count++;
+		nbr++;
+		n /= 10;
 	}
-	if (nbr < 10)
-		count++;
-	return (count);
+	return (nbr);
 }
 
 char	*ft_itoa(int n)
 {
-	char	*str;
-	long	nbr;
-	int		len;
+	int		nbr_digits;
+	long	nb;
+	char	*ret;
 
-	nbr = n;
-	len = ft_len(nbr) + 1;
-	str = malloc(sizeof(char) * len);
-	if (!str)
+	nb = (long)n;
+	nbr_digits = nb_digits(nb);
+	ret = malloc(nbr_digits + 1);
+	if (!ret)
 		return (NULL);
-	str[len] = '\0';
-	len--;
-	if (nbr < 0)
-		nbr *= -1;
-	while (len >= 0)
+	if (nb < 0)
+		nb *= -1;
+	ret += nbr_digits;
+	*ret = 0;
+	if (nb == 0)
+		*(--ret) = '0';
+	while (nb > 0)
 	{
-		str[len] = (nbr % 10) + '0';
-		nbr = nbr / 10;
-		len--;
+		*(--ret) = nb % 10 + '0';
+		nb /= 10;
 	}
 	if (n < 0)
-		str[0] = '-';
-	return (str);
+		*(--ret) = '-';
+	return (ret);
 }
