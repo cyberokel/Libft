@@ -10,7 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*strdup(const char *s)
+#include <libft.h>
+char	*ft_strdup(const char *s)
 {
 	char	*cpy;
 	size_t	len;
@@ -29,5 +30,6 @@ char	*strdup(const char *s)
 		cpy[i] = s[i];
 		i++;
 	}
+	cpy[i] = '\0';
 	return (cpy);
 }
