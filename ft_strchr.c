@@ -15,6 +15,8 @@ char	*ft_strchr(const char *s, int c)
 	int	i;
 
 	i = 0;
+	if (!s)
+		return (NULL);
 	while (s[i])
 	{
 		if (s[i] == c)
@@ -24,5 +26,5 @@ char	*ft_strchr(const char *s, int c)
 	if (s[i] == c)
 		return (&s[i]);
 	else
-		return NULL;
+		return (NULL);
 }

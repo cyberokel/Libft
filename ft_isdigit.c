@@ -10,9 +10,11 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isdigit(int nb)
+#include "libft.h"
+
+int	ft_isdigit(int c)
 {
-	if ( nb >= 48 && nb <= 57)
+	if ( c >= 48 && c <= 57)
 		return (1);
 	else
 		return (0);
