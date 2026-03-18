@@ -16,11 +16,10 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 {
 	t_list	*ptr;
 
-	ptr = *lst;
-	ptr = ft_lstlast(ptr);
+	ptr = ft_lstlast(*lst);
 	ptr->next = new;
+	new->next = NULL;
 }
-
 int	main()
 {
 	t_list *n1;
