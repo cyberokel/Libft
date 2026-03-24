@@ -20,21 +20,23 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 	ptr->next = new;
 	new->next = NULL;
 }
-int	main()
+/*int    main()
 {
-	t_list *n1;
-	t_list *n2;
-	t_list *n3;
-	t_list **lst;
-
-	*lst = NULL;
-	*n1 = ft_lstnew("first");
-	*n2 = ft_lstnew("deux");
-	*n3 = ft_lstnew("third");
-
-	ft_lstadd_back(lst, n1);
-	ft_lstadd_back(lst, n2);
-	ft_lstadd_back(lst, n3);
-
-	return (0);
-}
+    t_list *n1;
+    t_list *n2;
+    t_list *n3;
+    t_list **lst;
+    
+    lst = &n1;
+    n1 = ft_lstnew("first");
+    n2 = ft_lstnew("deux");
+    n3 = ft_lstnew("third");
+    printf("%p\n", n2);
+    ft_lstadd_back(lst, n2);
+    printf("%p", n2);
+    ft_lstadd_back(lst, n3);
+    free(n1);
+    free(n2);
+    free(n3);
+    return (0);
+}*/
